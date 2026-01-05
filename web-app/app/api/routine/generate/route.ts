@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { generateRoutine } from '@/lib/ai-agent';
-import { getSession } from '@/lib/auth';
+import { generateRoutine } from '../../../../lib/ai-agent';
+import { getSession } from '../../../../lib/auth';
 
 export async function POST(request: NextRequest) {
   try {
     const session = await getSession();
-    
+
     if (!session) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -15,7 +15,7 @@ export async function POST(request: NextRequest) {
 
     if (!age || !weight || !height || !level || !tenure || !model_provider || !api_key) {
       return NextResponse.json(
-        { error: 'All fields including API key are required'  },
+        { error: 'All fields including API key are required' },
         { status: 400 }
       );
     }
