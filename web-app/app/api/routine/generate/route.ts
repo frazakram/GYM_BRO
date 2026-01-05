@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { generateRoutine } from '../../../../lib/ai-agent';
-import { getSession } from '../../../../lib/auth';
+import { generateRoutine } from '@/lib/ai-agent';
+import { getSession } from '@/lib/auth';
 
 export async function POST(request: NextRequest) {
   try {
