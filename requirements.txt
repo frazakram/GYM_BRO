@@ -1,0 +1,7 @@
+streamlit
+langchain-anthropic
+langchain-openai
+langgraph
+langchain-core
+pydantic
+bcrypt
